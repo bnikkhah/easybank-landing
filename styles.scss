@@ -1,0 +1,115 @@
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+$dark-blue: rgb(43,183,218);
+$lime-green: rgb(49,211,92);
+$grayish-blue: hsl(233, 8%, 62%);
+$light-grayish-blue: hsl(220, 16%, 96%);
+$very-light-gray: hsl(0, 0%, 98%);
+$gradient: linear-gradient(90deg, rgba($lime-green,1) 0%, rgba($dark-blue,1) 100%);
+// $gradient-opposite: linear-gradient(90deg, rgba($dark-blue,1) 0%, rgba($lime-green,1) 100%);
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 18px;
+    color: $grayish-blue;
+    line-height: 30px;
+}
+
+h1,
+.h1 {
+    font-size: 56px;
+    line-height: 61px;
+    margin-bottom: 2rem;
+    color: $dark;
+}
+
+h2,
+.h2 {
+    font-size: 40px;
+    line-height: 45px;
+    margin-bottom: 1.5rem;
+    color: $dark;
+}
+
+h3,
+.h3 {
+    margin-bottom: 1.5rem;
+    color: $dark;
+}
+
+.btn {
+    background: transparent !important;
+    border: 0;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding-top: 0.675rem;
+    padding-bottom: 0.675rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    position: relative;
+
+    &:hover,
+    &:active,
+    &:focus {
+
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        border-radius: 9999px;
+    }
+
+    &:before {
+        background-image: linear-gradient(90deg, $dark-blue, $lime-green);
+    }
+
+    &:after {
+        background-image: linear-gradient(90deg, $lime-green, $dark-blue);
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
+    }
+
+}
+
+.section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.why {
+    background-color: $light-grayish-blue;
+
+    .why-item {
+        max-width: 298px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.articles {
+    background-color: $very-light-gray;
+
+    .card {
+
+        .card-body {
+            padding: 2rem;
+        }
+    }
+}
